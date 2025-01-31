@@ -66,7 +66,7 @@
   {
     "name": "Nike Mercurial Vinicius PE",
     "date": "2025-01-29",
-    "image": "images/2025/unknown.png",
+    "image": "images/unknown.png",
     "brand": "Nike",
     "series": "Mercurial",
     "pack": "Vinicius"
@@ -94,5 +94,221 @@
     "brand": "Adidas",
     "series": "Copa",
     "pack": "Polar Victory"
+  },
+  {
+    "name": "Puma Ultra 5 Light Up",
+    "date": "2025-01-30",
+    "image": "images/2025/01/puma-ultra-5-light-out-pack.jpg",
+    "brand": "Puma",
+    "series": "Ultra",
+    "pack": "Light Up"
+  },
+  {
+    "name": "Puma Future 8 Light Up",
+    "date": "2025-01-30",
+    "image": "images/2025/01/puma-future-8-light-out-pack.jpg",
+    "brand": "Puma",
+    "series": "Future",
+    "pack": "Light Up"
+  },
+  {
+    "name": "Puma King Light Up",
+    "date": "2025-01-30",
+    "image": "images/2025/01/puma-king-2025-light-out-pack.jpg",
+    "brand": "Puma",
+    "series": "King",
+    "pack": "Light Up"
+  },
+  {
+    "name": "New Balance 442 v2 Black",
+    "date": "2025-02-01",
+    "image": "images/unknown.png",
+    "brand": "New Balance",
+    "series": "442",
+    "pack": "Black"
+  },
+  {
+    "name": "New Balance 442 v2 White",
+    "date": "2025-02-01",
+    "image": "images/unknown.png",
+    "brand": "New Balance",
+    "series": "442",
+    "pack": "White"
+  },
+  {
+    "name": "New Balance Furon v8 Black",
+    "date": "2025-02-01",
+    "image": "images/unknown.png",
+    "brand": "New Balance",
+    "series": "Furon",
+    "pack": "Black"
+  },
+  {
+    "name": "New Balance Furon v8 White",
+    "date": "2025-02-01",
+    "image": "images/unknown.png",
+    "brand": "New Balance",
+    "series": "Furon",
+    "pack": "White"
+  },
+  {
+    "name": "New Balance Tekela v4+ Black",
+    "date": "2025-02-01",
+    "image": "images/unknown.png",
+    "brand": "New Balance",
+    "series": "Tekela",
+    "pack": "Black"
+  },
+  {
+    "name": "New Balance Tekela v4+ White",
+    "date": "2025-02-01",
+    "image": "images/unknown.png",
+    "brand": "New Balance",
+    "series": "Tekela",
+    "pack": "White"
+  },
+  {
+    "name": "Nike Mercurial Vapor I",
+    "date": "2025-02-02",
+    "image": "images/2025/02/nike-mercurial-2025-united.jpg",
+    "brand": "Nike",
+    "series": "Mercurial",
+    "pack": "Vapor 1 Remake"
+  },
+  {
+    "name": "Adidas Predator 2025 Mania Red",
+    "date": "2025-02-04",
+    "image": "images/2025/02/adidas-predator-mania-red.jpg",
+    "brand": "Adidas",
+    "series": "Predator",
+    "pack": "Mania Red"
+  },
+  {
+    "name": "Nike Total 90 2025 Remake Dynamic Yellow",
+    "date": "2025-02-02",
+    "image": "images/2025/02/Nike-Total-90-III-2025-yellow.jpg",
+    "brand": "Nike",
+    "series": "Total 90",
+    "pack": "Dymanic Yellow"
+  },
+  {
+    "name": "Nike Mercurial Superfly 10/Vapor 16 United",
+    "date": "2025-02-05",
+    "image": "images/2025/02/nike-mercurial-2025-united.jpg",
+    "brand": "Nike",
+    "series": "Mercurial",
+    "pack": "United"
+  },
+  {
+    "name": "Nike Phatom GX/Luna 2 United",
+    "date": "2025-02-05",
+    "image": "images/2025/02/nike-phantom-2-united.jpg",
+    "brand": "Nike",
+    "series": "Phantom",
+    "pack": "United"
+  },
+  {
+    "name": "Nike Tiempo Legend 10 United",
+    "date": "2025-02-05",
+    "image": "images/2025/02/nike-tiempo-10-united.jpg",
+    "brand": "Nike",
+    "series": "Tiempo",
+    "pack": "United"
+  },
+  {
+    "name": "Mizuno Alpha II White",
+    "date": "2025-02-06",
+    "image": "images/2025/02/mizuno-alpha-2-2025-white.jpg",
+    "brand": "Mizuno",
+    "series": "Alpha",
+    "pack": "White"
+  },
+  {
+    "name": "Nike Total 90 2025 Remake Black",
+    "date": "2025-02-06",
+    "image": "images/2025/02/Nike-Total-90-III-2025-black.jpg",
+    "brand": "Nike",
+    "series": "Total 90",
+    "pack": "Black"
+  },
+  {
+    "name": "Nike Total 90 2025 Remake Silver",
+    "date": "2025-02-06",
+    "image": "images/2025/02/Nike-Total-90-III-2025-silver.jpg",
+    "brand": "Nike",
+    "series": "Total 90",
+    "pack": "Silver"
+  },
+  {
+    "name": "Adidas F50 Messi Silver Metallic",
+    "date": "2025-02-11",
+    "image": "images/2025/02/Adidas-F50-Messi-2025-silver.jpg",
+    "brand": "Adidas",
+    "series": "F50",
+    "pack": "Silver Metallic"
+  },
+  {
+    "name": "Puma Future 8 Creativity Neymar",
+    "date": "2025-02-13",
+    "image": "images/unknown.png",
+    "brand": "Puma",
+    "series": "Future",
+    "pack": "Creativity Neymar"
+  },
+  {
+    "name": "Adidas Predator 2025 Moments",
+    "date": "2025-02-18",
+    "image": "images/2025/02/adidas-predator-25-moments.jpg",
+    "brand": "Adidas",
+    "series": "Predator",
+    "pack": "Moments"
+  },
+  {
+    "name": "Nike Mercurial Superfly 10/Vapor 16 Cosmic Speed",
+    "date": "2025-02-20",
+    "image": "images/2025/02/nike-mercurial-2025-cosmic-speed.jpg",
+    "brand": "Nike",
+    "series": "Mercurial",
+    "pack": "Cosmic Speed"
+  },
+  {
+    "name": "Mizuno Alpha II Silver",
+    "date": "2025-02-21",
+    "image": "images/2025/02/mizuno-alpha-2-2025-silver.jpg",
+    "brand": "Mizuno",
+    "series": "Alpha",
+    "pack": "Silver"
+  },
+  {
+    "name": "Adidas F50 Yellow",
+    "date": "2025-02-22",
+    "image": "images/2025/02/Adidas-F50-yellow.jpg",
+    "brand": "Adidas",
+    "series": "F50",
+    "pack": "Yellow"
+  },
+  {
+    "name": "Adidas F50 Mystic Victory",
+    "date": "2025-02-27",
+    "image": "images/2025/02/Adidas-F50-mystic-victory.jpg",
+    "brand": "Adidas",
+    "series": "F50",
+    "pack": "Mystic Victory"
+  },
+  {
+    "name": "Adidas Copa Pure III Mystic Victory",
+    "date": "2025-02-27",
+    "image": "images/2025/02/adidas-copa-pure-3-mystic-victory.jpg",
+    "brand": "Adidas",
+    "series": "Cipa",
+    "pack": "Mystic Victory"
+  },
+  {
+    "name": "Adidas Predator 2025 Mystic Victory",
+    "date": "2025-02-27",
+    "image": "images/2025/02/adidas-predator-25-mystic-victory.jpg",
+    "brand": "Adidas",
+    "series": "Predator",
+    "pack": "Mystic Victory"
   }
 ]
