@@ -14,7 +14,9 @@ All code are developed by the [DeepSeek AI](https://github.com/deepseek-ai). Hum
 
 ### Directly Use
 
-TBD
+Open directly https://ddddzh.github.io/football-boots-release-calendar/
+
+Mobile phone webapp TBD
 
 ### Local Deployment
 
