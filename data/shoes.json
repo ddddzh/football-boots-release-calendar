@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Adidas Predator 25 Chinese New Year",
+    "date": "2025-01-20",
+    "image": "images/2025/01/adidas-predator-2025-chinese-new-year-snake-boots.jpg",
+    "brand": "Adidas",
+    "series": "Predator",
+    "pack": "Chinese New Year"
+  },
+  {
+    "name": "New Balance Furon v8",
+    "date": "2025-01-21",
+    "image": "images/2025/01/new-balance-furon-v8-boot-pack.jpg",
+    "brand": "New Balance",
+    "series": "Furon",
+    "pack": "Boot Pack"
+  },
+  {
+    "name": "New Balance Tekela v4+",
+    "date": "2025-01-21",
+    "image": "images/2025/01/new-balance-tekela-v4plus-boot-pack.jpg",
+    "brand": "New Balance",
+    "series": "Tekela",
+    "pack": "Boot Pack"
+  },
+  {
+    "name": "New Balance 442 v2",
+    "date": "2025-01-21",
+    "image": "images/2025/01/new-balance-442-v2-boot-pack.jpg",
+    "brand": "New Balance",
+    "series": "442",
+    "pack": "Boot Pack"
+  },
+  {
+    "name": "Adidas Predator 25 Stealth Victory",
+    "date": "2025-01-23",
+    "image": "images/2025/01/adidas-predator-25-stealth-victory.jpg",
+    "brand": "Adidas",
+    "series": "Predator",
+    "pack": "Stealth Victory"
+  },
+  {
+    "name": "Adidas F50 Stealth Victory",
+    "date": "2025-01-23",
+    "image": "images/2025/01/adidas-f50-stealth-victory.jpg",
+    "brand": "Adidas",
+    "series": "F50",
+    "pack": "Stealth Victory"
+  },
+  {
+    "name": "Adidas Copa Pure 3 Stealth Victory",
+    "date": "2025-01-23",
+    "image": "images/2025/01/adidas-copa-pure-3-stealth-victory.jpg",
+    "brand": "Adidas",
+    "series": "Copa",
+    "pack": "Stealth Victory"
+  },
+  {
+    "name": "Nike Tiempo Legend 10 Luxe",
+    "date": "2025-01-27",
+    "image": "images/2025/01/nike-tiempo-luxe-disruption.jpg",
+    "brand": "Nike",
+    "series": "Tiempo",
+    "pack": "Luxe"
+  },
+  {
+    "name": "Nike Mercurial Vinicius PE",
+    "date": "2025-01-29",
+    "image": "images/2025/unknown.png",
+    "brand": "Nike",
+    "series": "Mercurial",
+    "pack": "Vinicius"
+  },
+  {
+    "name": "Adidas Predator 25 Polar Victory",
+    "date": "2025-01-30",
+    "image": "images/2025/01/adidas-predator-25-polar-victory.jpg",
+    "brand": "Adidas",
+    "series": "Predator",
+    "pack": "Polar Victory"
+  },
+  {
+    "name": "Adidas F50 Polar Victory",
+    "date": "2025-01-30",
+    "image": "images/2025/01/adidas-f50-polar-victory.jpg",
+    "brand": "Adidas",
+    "series": "F50",
+    "pack": "Polar Victory"
+  },
+  {
+    "name": "Adidas Copa Pure 3 Polar Victory",
+    "date": "2025-01-30",
+    "image": "images/2025/01/adidas-copa-pure-3-polar-victory.jpg",
+    "brand": "Adidas",
+    "series": "Copa",
+    "pack": "Polar Victory"
+  }
+]

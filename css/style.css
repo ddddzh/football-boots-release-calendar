@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+    background: #f5f5f5;
+    color: #333;
+}
+
+header {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.view-toggle {
+    margin-top: 20px;
+}
+
+.view-toggle button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+
+.view-toggle button.active {
+    background: #2980b9;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.hidden {
+    display: none;
+}
+
+/* 日历样式 */
+#calendar {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.fc-daygrid-day {
+    padding: 3px!important;
+}
+
+.event-card {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s;
+    height: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.event-card:hover {
+    transform: scale(1.03);
+}
+
+.event-card img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* 信息卡片 */
+.tooltip-card {
+    position: fixed;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.95);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 300px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    pointer-events: none;
+}
+
+.tooltip-card.visible {
+    opacity: 1;
+    transform: translateY(-5px);
+    pointer-events: auto;
+}
+
+.tooltip-card h3 {
+    margin: 0 0 12px 0;
+    font-size: 18px;
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 10px;
+}
+
+.tooltip-card p {
+    margin: 8px 0;
+    font-size: 14px;
+    color: #eee;
+}
+
+/* 列表视图 */
+#scheduleList {
+    list-style: none;
+    padding: 0;
+}
+
+.schedule-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin: 10px 0;
+    background: white;
+    border-radius: 10px;
+    transition: transform 0.2s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.schedule-item:hover {
+    transform: translateX(5px);
+}
+
+.schedule-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-right: 20px;
+}
+
+.date {
+    font-weight: bold;
+    color: #3498db;
+    min-width: 120px;
+}
+
+.info p {
+    margin: 8px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+/* 筛选器样式 */
+.schedule-header {
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: white;
+    font-size: 14px;
+    min-width: 120px;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .view-toggle button {
+        width: 100%;
+        margin: 5px 0;
+        padding: 12px;
+    }
+
+    #calendar {
+        padding: 5px;
+    }
+
+    .fc-daygrid-day {
+        min-height: 80px!important;
+    }
+
+    .event-card img {
+        height: 80px;
+    }
+
+    .tooltip-card {
+        width: 90%!important;
+        left: 5%!important;
+        top: 20px!important;
+        transform: none!important;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+
+    .schedule-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .schedule-item img {
+        margin: 0 0 15px 0;
+        width: 100%;
+        max-width: 200px;
+    }
+}

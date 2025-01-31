@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>足球鞋发售日历</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>足球鞋发售日历</h1>
+        <div class="view-toggle">
+            <button class="active" data-view="calendar">日历视图</button>
+            <button data-view="schedule">列表视图</button>
+        </div>
+        
+        <script>
+        // 修改事件监听方式
+        document.querySelectorAll('.view-toggle button').forEach(btn => {
+            btn.addEventListener('click', function() {
+                showView(this.dataset.view);
+            });
+        });
+        </script>
+    </header>
+
+    <div id="calendarView" class="view">
+        <div id="calendar"></div>
+    </div>
+
+    <div id="scheduleView" class="view hidden">
+        <div class="schedule-header">
+            <div class="filters">
+                <select id="brandFilter">
+                    <option value="">所有品牌</option>
+                </select>
+                <select id="seriesFilter">
+                    <option value="">所有系列</option>
+                </select>
+            </div>
+        </div>
+        <ul id="scheduleList"></ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
