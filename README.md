@@ -33,3 +33,10 @@ Start a local server in the repo root directory
 ```sh
 ws
 ```
+### TODOs
+
+- [ ] Bar swing switch for 2 different views
+- [ ] Auto jump to nearest date in schedule view
+- [ ] Icon
+- [ ] iOS PWA https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html
+- [ ] Adriod PWS
