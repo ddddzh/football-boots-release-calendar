@@ -8,6 +8,13 @@ async function init() {
         initCalendar();
         initScheduleFilters();
         updateSchedule();
+
+        // 添加视图切换事件
+        document.querySelectorAll('.view-toggle button').forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                showView(this.dataset.view, e);
+            });
+        });
     } catch (error) {
         console.error('数据加载失败:', error);
     }
@@ -16,7 +23,7 @@ async function init() {
 function initScheduleFilters() {
     const brandFilter = document.getElementById('brandFilter');
     const seriesFilter = document.getElementById('seriesFilter');
-    
+
     // 初始化品牌选项
     const brands = [...new Set(allData.map(item => item.brand))];
     brands.forEach(brand => {
@@ -27,15 +34,15 @@ function initScheduleFilters() {
     brandFilter.addEventListener('change', () => {
         const selectedBrand = brandFilter.value;
         seriesFilter.innerHTML = '<option value="">所有系列</option>';
-        
-        const filtered = selectedBrand 
+
+        const filtered = selectedBrand
             ? allData.filter(item => item.brand === selectedBrand)
             : allData;
-            
+
         [...new Set(filtered.map(item => item.series))].forEach(series => {
             seriesFilter.add(new Option(series, series));
         });
-        
+
         updateSchedule();
     });
 
@@ -44,14 +51,14 @@ function initScheduleFilters() {
 
 function initCalendar() {
     const calendarEl = document.getElementById('calendar');
-    
+
     const mobileOptions = window.matchMedia("(max-width: 768px)").matches ? {
         headerToolbar: {
             left: 'title',
             center: '',
             right: 'today prev,next'
         },
-        aspectRatio: 1.2
+        aspectRatio: 0.5
     } : {
         headerToolbar: {
             left: 'prev,next today',
@@ -79,7 +86,7 @@ function initCalendar() {
             week: '周视图'
         }
     });
-    
+
     calendar.render();
 }
 
@@ -91,7 +98,7 @@ function renderEventContent(eventInfo) {
              alt="${eventInfo.event.title}"
              loading="lazy">
     `;
-    
+
     element.addEventListener('click', (e) => {
         e.stopPropagation();
         showTooltip(eventInfo, element);
@@ -102,7 +109,7 @@ function renderEventContent(eventInfo) {
 
 function showTooltip(eventInfo, triggerElement) {
     document.querySelectorAll('.tooltip-card').forEach(t => t.remove());
-    
+
     const tooltip = document.createElement('div');
     tooltip.className = 'tooltip-card';
     tooltip.innerHTML = `
@@ -116,7 +123,7 @@ function showTooltip(eventInfo, triggerElement) {
 
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
     const rect = triggerElement.getBoundingClientRect();
-    
+
     if (isMobile) {
         tooltip.style.left = '5%';
         tooltip.style.top = '20px';
@@ -160,15 +167,15 @@ function showTooltip(eventInfo, triggerElement) {
 function updateSchedule() {
     const brand = document.getElementById('brandFilter').value;
     const series = document.getElementById('seriesFilter').value;
-    
+
     const filteredData = allData.filter(item => {
         return (!brand || item.brand === brand) &&
-               (!series || item.series === series);
+            (!series || item.series === series);
     });
 
     const list = document.getElementById('scheduleList');
     list.innerHTML = '';
-    
+
     filteredData
         .sort((a, b) => new Date(a.date) - new Date(b.date))
         .forEach(item => {
@@ -198,8 +205,8 @@ function formatDate(dateString) {
     });
 }
 
-function showView(viewName) {
-    // 确保所有视图都被隐藏
+function showView(viewName, event) {
+    // 隐藏所有视图
     document.querySelectorAll('.view').forEach(view => {
         view.classList.add('hidden');
     });
@@ -208,21 +215,21 @@ function showView(viewName) {
     const targetView = document.getElementById(`${viewName}View`);
     if (targetView) {
         targetView.classList.remove('hidden');
-    } else {
-        console.error(`找不到视图容器：${viewName}View`);
     }
-    
-    // 更新按钮状态
-    document.querySelectorAll('.view-toggle button').forEach(btn => {
-        btn.classList.remove('active');
-        // if (btn.textContent.toLowerCase().includes(viewName.toLowerCase())) {
-        //     btn.classList.add('active');
-        // }
-    });
-    event.target.classList.add('active');
 
+    // 更新按钮状态
+    const buttons = document.querySelectorAll('.view-toggle button');
+    buttons.forEach(btn => {
+        btn.classList.remove('active');
+    });
     
-    // 如果是日历视图需要刷新
+    // 更可靠的按钮定位方式
+    const activeButton = event.target.closest('button');
+    if (activeButton) {
+        activeButton.classList.add('active');
+    }
+
+    // 日历需要刷新
     if (viewName === 'calendar') {
         calendar.refetchEvents();
     }
