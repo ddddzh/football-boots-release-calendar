@@ -7,11 +7,13 @@ async function init() {
         allData = await response.json();
         initCalendar();
         initScheduleFilters();
-        updateSchedule();
+        
+        // 初始化默认视图
+        showView('calendar', { target: document.querySelector('[data-view="calendar"]') });
 
-        // 添加视图切换事件
+        // 绑定视图切换事件
         document.querySelectorAll('.view-toggle button').forEach(btn => {
-            btn.addEventListener('click', function (e) {
+            btn.addEventListener('click', function(e) {
                 showView(this.dataset.view, e);
             });
         });
@@ -47,18 +49,23 @@ function initScheduleFilters() {
     });
 
     seriesFilter.addEventListener('change', updateSchedule);
+    
+    // 初始化筛选器
+    setTimeout(() => {
+        brandFilter.dispatchEvent(new Event('change'));
+    }, 100);
 }
 
 function initCalendar() {
     const calendarEl = document.getElementById('calendar');
-
+    
     const mobileOptions = window.matchMedia("(max-width: 768px)").matches ? {
         headerToolbar: {
             left: 'title',
             center: '',
             right: 'today prev,next'
         },
-        aspectRatio: 0.5
+        aspectRatio: 0.8
     } : {
         headerToolbar: {
             left: 'prev,next today',
@@ -80,13 +87,16 @@ function initCalendar() {
         fixedWeekCount: false,
         timeZone: 'UTC',
         locale: 'zh-cn',
+        height: 'auto',
+        contentHeight: 'auto',
+        expandRows: true,
         buttonText: {
             today: '今天',
             month: '月视图',
             week: '周视图'
         }
     });
-
+    
     calendar.render();
 }
 
@@ -124,16 +134,31 @@ function showTooltip(eventInfo, triggerElement) {
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
     const rect = triggerElement.getBoundingClientRect();
 
+    document.body.appendChild(tooltip);
+    
+    // 强制重绘确保获取正确尺寸
+    tooltip.offsetHeight;
+
     if (isMobile) {
-        tooltip.style.left = '5%';
-        tooltip.style.top = '20px';
-        tooltip.style.width = '90%';
+        // 移动端：居中显示
+        const viewportHeight = window.innerHeight;
+        const tooltipHeight = tooltip.offsetHeight;
+        const topPosition = Math.max(20, (viewportHeight - tooltipHeight) / 2);
+        
+        tooltip.style.left = '50%';
+        tooltip.style.top = `${topPosition}px`;
+        tooltip.style.transform = 'translateX(-50%)';
     } else {
+        // 桌面端：智能边界检测
+        const viewportHeight = window.innerHeight;
+        const tooltipHeight = tooltip.offsetHeight;
+        const calculatedTop = rect.top + window.scrollY - tooltipHeight - 10;
+        const safeTop = Math.max(20, Math.min(calculatedTop, viewportHeight - tooltipHeight - 20));
+        
         tooltip.style.left = `${rect.left + window.scrollX}px`;
-        tooltip.style.top = `${rect.top + window.scrollY - 140}px`;
+        tooltip.style.top = `${safeTop}px`;
     }
 
-    document.body.appendChild(tooltip);
     setTimeout(() => tooltip.classList.add('visible'), 10);
 
     // 关闭逻辑
@@ -206,30 +231,31 @@ function formatDate(dateString) {
 }
 
 function showView(viewName, event) {
-    // 隐藏所有视图
+    event = event || window.event;
+    
     document.querySelectorAll('.view').forEach(view => {
         view.classList.add('hidden');
     });
     
-    // 显示目标视图
     const targetView = document.getElementById(`${viewName}View`);
     if (targetView) {
         targetView.classList.remove('hidden');
     }
 
-    // 更新按钮状态
     const buttons = document.querySelectorAll('.view-toggle button');
     buttons.forEach(btn => {
         btn.classList.remove('active');
     });
     
-    // 更可靠的按钮定位方式
     const activeButton = event.target.closest('button');
     if (activeButton) {
         activeButton.classList.add('active');
     }
 
-    // 日历需要刷新
+    if (viewName === 'schedule') {
+        document.getElementById('brandFilter').dispatchEvent(new Event('change'));
+    }
+
     if (viewName === 'calendar') {
         calendar.refetchEvents();
     }
