@@ -66,7 +66,6 @@
   {
     "name": "Nike Mercurial Vinicius PE",
     "date": "2025-01-29",
-    "image": "images/unknown.png",
     "brand": "Nike",
     "series": "Mercurial",
     "pack": "Vinicius"
@@ -122,7 +121,6 @@
   {
     "name": "New Balance 442 v2 Black",
     "date": "2025-02-01",
-    "image": "images/unknown.png",
     "brand": "New Balance",
     "series": "442",
     "pack": "Black"
@@ -130,7 +128,6 @@
   {
     "name": "New Balance 442 v2 White",
     "date": "2025-02-01",
-    "image": "images/unknown.png",
     "brand": "New Balance",
     "series": "442",
     "pack": "White"
@@ -138,7 +135,6 @@
   {
     "name": "New Balance Furon v8 Black",
     "date": "2025-02-01",
-    "image": "images/unknown.png",
     "brand": "New Balance",
     "series": "Furon",
     "pack": "Black"
@@ -146,7 +142,6 @@
   {
     "name": "New Balance Furon v8 White",
     "date": "2025-02-01",
-    "image": "images/unknown.png",
     "brand": "New Balance",
     "series": "Furon",
     "pack": "White"
@@ -154,7 +149,6 @@
   {
     "name": "New Balance Tekela v4+ Black",
     "date": "2025-02-01",
-    "image": "images/unknown.png",
     "brand": "New Balance",
     "series": "Tekela",
     "pack": "Black"
@@ -162,7 +156,6 @@
   {
     "name": "New Balance Tekela v4+ White",
     "date": "2025-02-01",
-    "image": "images/unknown.png",
     "brand": "New Balance",
     "series": "Tekela",
     "pack": "White"
@@ -250,7 +243,6 @@
   {
     "name": "Puma Future 8 Creativity Neymar",
     "date": "2025-02-13",
-    "image": "images/unknown.png",
     "brand": "Puma",
     "series": "Future",
     "pack": "Creativity Neymar"

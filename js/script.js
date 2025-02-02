@@ -7,13 +7,13 @@ async function init() {
         allData = await response.json();
         initCalendar();
         initScheduleFilters();
-        
+
         // 初始化默认视图
         showView('calendar', { target: document.querySelector('[data-view="calendar"]') });
 
         // 绑定视图切换事件
         document.querySelectorAll('.view-toggle button').forEach(btn => {
-            btn.addEventListener('click', function(e) {
+            btn.addEventListener('click', function (e) {
                 showView(this.dataset.view, e);
             });
         });
@@ -49,7 +49,7 @@ function initScheduleFilters() {
     });
 
     seriesFilter.addEventListener('change', updateSchedule);
-    
+
     // 初始化筛选器
     setTimeout(() => {
         brandFilter.dispatchEvent(new Event('change'));
@@ -58,7 +58,7 @@ function initScheduleFilters() {
 
 function initCalendar() {
     const calendarEl = document.getElementById('calendar');
-    
+
     const mobileOptions = window.matchMedia("(max-width: 768px)").matches ? {
         headerToolbar: {
             left: 'title',
@@ -96,17 +96,32 @@ function initCalendar() {
             week: '周视图'
         }
     });
-    
+
     calendar.render();
+}
+
+function getItemImageUrl(item) {
+    // 优先使用自定义图片
+    if (item.image) return item.image;
+
+    // 生成品牌Logo路径
+    const brandSlug = item.brand
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/-+/g, "-")
+        .replace(/^-|-$/g, "");
+
+    return `images/brands/${brandSlug}.png`;
 }
 
 function renderEventContent(eventInfo) {
     const element = document.createElement('div');
     element.className = 'event-card';
     element.innerHTML = `
-        <img src="${eventInfo.event.extendedProps.image}" 
+        <img src="${getItemImageUrl(eventInfo.event.extendedProps)}" 
              alt="${eventInfo.event.title}"
-             loading="lazy">
+             loading="lazy"
+             onerror="this.src='images/default.png'">
     `;
 
     element.addEventListener('click', (e) => {
@@ -135,7 +150,7 @@ function showTooltip(eventInfo, triggerElement) {
     const rect = triggerElement.getBoundingClientRect();
 
     document.body.appendChild(tooltip);
-    
+
     // 强制重绘确保获取正确尺寸
     tooltip.offsetHeight;
 
@@ -144,7 +159,7 @@ function showTooltip(eventInfo, triggerElement) {
         const viewportHeight = window.innerHeight;
         const tooltipHeight = tooltip.offsetHeight;
         const topPosition = Math.max(20, (viewportHeight - tooltipHeight) / 2);
-        
+
         tooltip.style.left = '50%';
         tooltip.style.top = `${topPosition}px`;
         tooltip.style.transform = 'translateX(-50%)';
@@ -154,7 +169,7 @@ function showTooltip(eventInfo, triggerElement) {
         const tooltipHeight = tooltip.offsetHeight;
         const calculatedTop = rect.top + window.scrollY - tooltipHeight - 10;
         const safeTop = Math.max(20, Math.min(calculatedTop, viewportHeight - tooltipHeight - 20));
-        
+
         tooltip.style.left = `${rect.left + window.scrollX}px`;
         tooltip.style.top = `${safeTop}px`;
     }
@@ -208,7 +223,10 @@ function updateSchedule() {
             li.innerHTML = `
                 <div class="schedule-item">
                     <div class="date">${formatDate(item.date)}</div>
-                    <img src="${item.image}" alt="${item.name}" loading="lazy">
+                    <img src="${getItemImageUrl(item)}"
+                         alt="${item.name}"
+                         loading="lazy"
+                         onerror="this.src='images/default.png'">
                     <div class="info">
                         <h3>${item.name}</h3>
                         <p>${item.pack}</p>
@@ -232,11 +250,11 @@ function formatDate(dateString) {
 
 function showView(viewName, event) {
     event = event || window.event;
-    
+
     document.querySelectorAll('.view').forEach(view => {
         view.classList.add('hidden');
     });
-    
+
     const targetView = document.getElementById(`${viewName}View`);
     if (targetView) {
         targetView.classList.remove('hidden');
@@ -246,7 +264,7 @@ function showView(viewName, event) {
     buttons.forEach(btn => {
         btn.classList.remove('active');
     });
-    
+
     const activeButton = event.target.closest('button');
     if (activeButton) {
         activeButton.classList.add('active');
